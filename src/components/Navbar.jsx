@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
 
 const Navbar = ({ hidden = false }) => {
-  // ⛔ Saat hidden, jangan render apa pun
+  // ⛔ If hidden, do not render anything
   if (hidden) return null;
 
   const [active, setActive] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setActive(window.scrollY > 150);
-    handleScroll(); // init posisi saat mount
+    handleScroll(); // init position on mount
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -17,9 +17,10 @@ const Navbar = ({ hidden = false }) => {
     <nav className="navbar relative z-50 py-7 flex items-center justify-between px-6 md:px-12">
       {/* Logo */}
       <div className="logo">
-        <h1 className="text-3xl font-bold text-white p-1 md:bg-transparent md:text-white">
-          Nabeel
-        </h1>
+        <a href="#home" className="flex items-center gap-2">
+          <img src="/assets/logo1.png" alt="Logo" className="w-12 h-12 object-contain" />
+          <span className="text-2xl font-bold text-white hidden sm:block">Nabeel</span>
+        </a>
       </div>
 
       {/* Menu */}
@@ -32,10 +33,10 @@ const Navbar = ({ hidden = false }) => {
           transition-all md:transition-none
           ${active ? "top-0 opacity-100" : "-top-10 opacity-0"}`}
       >
-        <li><a href="#home" className="sm:text-lg text-base font-medium">Home</a></li>
-        <li><a href="#about" className="sm:text-lg text-base font-medium">About</a></li>
-        <li><a href="#project" className="sm:text-lg text-base font-medium">Project</a></li>
-        <li><a href="#contact" className="sm:text-lg text-base font-medium">Contact</a></li>
+        <li><a href="#home" className="sm:text-lg text-base font-medium hover:text-cyan-400 transition-colors">Home</a></li>
+        <li><a href="#about" className="sm:text-lg text-base font-medium hover:text-cyan-400 transition-colors">About</a></li>
+        <li><a href="#project" className="sm:text-lg text-base font-medium hover:text-cyan-400 transition-colors">Projects</a></li>
+        <li><a href="#contact" className="sm:text-lg text-base font-medium hover:text-cyan-400 transition-colors">Contact</a></li>
       </ul>
     </nav>
   );

@@ -6,13 +6,16 @@ import ScrambledText from "./components/ScrambledText/ScrambledText";
 import SplitText from "./components/SplitText/SplitText";
 import Lanyard from "./components/Lanyard/Lanyard";
 import GlassIcons from "./components/GlassIcons/GlassIcons";
-import { listTools, listProyek } from "./data";
+import { listTools, listProjects } from "./data";
 import ChromaGrid from "./components/ChromaGrid/ChromaGrid";
 import ProjectModal from "./components/ProjectModal/ProjectModal";
 import { RiExternalLinkLine } from "react-icons/ri";
 import Aurora from "./components/Aurora/Aurora";
 import AOS from 'aos';
 import ChatRoom from "./components/ChatRoom";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import CoffeeModal from "./components/CoffeeModal";
 
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 // ..
@@ -22,7 +25,8 @@ function App() {
   const aboutRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
 
-  const [selectedProject, setSelectedProject] = useState(null); // null = modal tertutup
+  const [selectedProject, setSelectedProject] = useState(null); // null = modal closed
+  const [isCoffeeModalOpen, setIsCoffeeModalOpen] = useState(false);
 
   const handleProjectClick = (project) => {
     setSelectedProject(project);
@@ -38,7 +42,7 @@ function App() {
       performance.getEntriesByType("navigation")[0]?.type === "reload";
 
     if (isReload) {
-      // Ambil path tanpa hash
+      // Get path without hash
       const baseUrl = window.location.origin + "/";
       window.location.replace(baseUrl);
     }
@@ -64,6 +68,7 @@ function App() {
 
   return (
     <>
+      <Navbar />
       <div className="absolute top-0 left-0 w-full h-full -z-10 ">
         <Aurora
           colorStops={["#577870", "#1F97A6", "#127B99"]}
@@ -120,7 +125,7 @@ function App() {
             />
           </div>
         </div>
-        {/* tentang */}
+        {/* About */}
         <div className="mt-15 mx-auto w-full max-w-6xl rounded-3xl border-[5px] border-cyan-500/40 shadow-[0_0_30px_rgba(6,182,212,0.4)] bg-gradient-to-br from-[#0a0a0a] via-[#111111] to-[#1a1a1a] p-6" id="about">
           <div className="flex flex-col md:flex-row items-center justify-between gap-10 pt-0 px-8" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
             <div className="basis-full md:basis-7/12 pr-0 md:pr-8 border-b md:border-b-0 md:border-r border-cyan-500/30">
@@ -143,7 +148,7 @@ function App() {
                     <h1 className="text-3xl md:text-4xl mb-1">
                       20<span className="text-cyan-500">+</span>
                     </h1>
-                    <p>Project Finished</p>
+                    <p>Projects Finished</p>
                   </div>
                   <div>
                     <h1 className="text-3xl md:text-4xl mb-1">
@@ -178,44 +183,44 @@ function App() {
         </div>
         <div className="tools mt-32">
           <h1 className="text-4xl/snug font-bold mb-4" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true" >Tools & Technologies</h1>
-          <p className="w-2/5 text-base/loose opacity-50" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" data-aos-once="true">My Profesional Skills</p>
+          <p className="w-2/5 text-base/loose opacity-50" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" data-aos-once="true">My Professional Skills</p>
           <div className="tools-box mt-14 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
 
             {listTools.map((tool) => (
               <div
-                key={tool.id} data-aos="fade-up" data-aos-duration="1000" data-aos-delay={tool.dad} data-aos-once="true"
+                key={tool.id} data-aos="fade-up" data-aos-duration="1000" data-aos-delay={tool.delay} data-aos-once="true"
                 className="flex items-center gap-4 p-4 border border-zinc-700 rounded-xl bg-zinc-900/60 backdrop-blur-md hover:bg-zinc-800/80 transition-all duration-300 group shadow-lg"
               >
                 <img
-                  src={tool.gambar}
+                  src={tool.image}
                   alt="Tools Image"
                   className="w-16 h-16 object-contain bg-zinc-800 p-2 rounded-lg group-hover:bg-zinc-900 transition-all duration-300"
                 />
                 <div className="flex flex-col overflow-hidden">
                   <div className="truncate">
                     <ShinyText
-                      text={tool.nama}
+                      text={tool.name}
                       disabled={false}
                       speed={3}
                       className="text-lg font-semibold block"
                     />
                   </div>
-                  <p className="text-sm text-zinc-400 truncate">{tool.ket}</p>
+                  <p className="text-sm text-zinc-400 truncate">{tool.category}</p>
                 </div>
               </div>
             ))}
           </div>
         </div>
-        {/* tentang */}
+        {/* About */}
 
-        {/* Proyek */}
-        <div className="proyek mt-32 py-10" id="project" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true"></div>
-        <h1 className="text-center text-4xl font-bold mb-2" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">Project</h1>
+        {/* Projects */ }
+        <div className="projects mt-32 py-10" id="project" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true"></div>
+        <h1 className="text-center text-4xl font-bold mb-2" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">Projects</h1>
         <p className="text-base/loose text-center opacity-50" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" data-aos-once="true">Showcasing a selection of projects that reflect my skills, creativity, and passion for building meaningful digital experiences.</p>
-        <div className="proyek-box mt-14" >
+        <div className="projects-box mt-14" >
           <div style={{ height: 'auto', position: 'relative' }} data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400" data-aos-once="true" >
             <ChromaGrid
-              items={listProyek}
+              items={listProjects}
               onItemClick={handleProjectClick}
               radius={500}
               columns={3}
@@ -226,11 +231,11 @@ function App() {
             />
           </div>
         </div>
-        {/* Proyek */}
+        {/* Projects */}
 
 
-        {/* Kontak */}
-        <div className="kontak mt-32 sm:p-10 p-0" id="contact">
+        {/* Contact */}
+        <div className="contact mt-32 sm:p-10 p-0" id="contact">
           <h1
             className="text-4xl mb-2 font-bold text-center"
             data-aos="fade-up"
@@ -251,15 +256,15 @@ function App() {
 
           {/* Container dua kolom */}
           <div className="flex flex-col md:flex-row gap-8">
-            {/* Chat Room di kiri */}
+            {/* Chat Room on the left */}
             <div className="flex-1 bg-zinc-800 p-6 rounded-md" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400" data-aos-once="true">
               <ChatRoom />
             </div>
 
-            {/* Contact Form di kanan */}
+            {/* Contact Form on the right */}
             <div className="flex-1">
               <form
-                action="https://formsubmit.co/rissoppa21@gmail.com"
+                action="https://formsubmit.co/nabeelhussainakhtar@gmail.com"
                 method="POST"
                 className="bg-zinc-800 p-10 w-full rounded-md"
                 autoComplete="off"
@@ -314,13 +319,19 @@ function App() {
             </div>
           </div>
         </div>
-        {/* Kontak */}
+        {/* Contact */}
       </main>
+      <Footer onCoffeeClick={() => setIsCoffeeModalOpen(true)} />
 
       <ProjectModal
         isOpen={!!selectedProject}
         onClose={handleCloseModal}
         project={selectedProject}
+      />
+
+      <CoffeeModal 
+        isOpen={isCoffeeModalOpen}
+        onClose={() => setIsCoffeeModalOpen(false)}
       />
     </>
   )

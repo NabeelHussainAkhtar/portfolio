@@ -17,7 +17,7 @@ export default function ChatRoom() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  // Cek login
+  // Check login
   useEffect(() => {
     const unsub = onAuthStateChanged(auth, (u) => {
       setUser(u);
@@ -26,7 +26,7 @@ export default function ChatRoom() {
     return () => unsub();
   }, []);
 
-  // Ambil pesan real-time
+  // Get real-time messages
   useEffect(() => {
     const q = query(collection(db, "messages"), orderBy("createdAt"));
     const unsub = onSnapshot(q, (snapshot) => {
@@ -49,7 +49,7 @@ export default function ChatRoom() {
     }
   };
 
-  // Kirim pesan
+  // Send message
   const sendMessage = async (e) => {
     e.preventDefault();
     if (!message.trim() || !user) return;
@@ -143,7 +143,7 @@ export default function ChatRoom() {
             type="text"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            placeholder="Ketik pesan..."
+            placeholder="Type a message..."
             className="flex-1 min-w-0 p-2 rounded-lg bg-zinc-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
           <button

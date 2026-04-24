@@ -8,37 +8,37 @@ export default Image;
 
 export const listTools = [
   // Backend
-  { id: 1, gambar: "/assets/tools/java.png", nama: "Java 8–17", ket: "Backend", dad: "100" },
-  { id: 2, gambar: "/assets/tools/spring.png", nama: "Spring Boot", ket: "Backend", dad: "200" },
-  { id: 3, gambar: "/assets/tools/microservices.png", nama: "Microservices", ket: "Backend", dad: "300" },
-  { id: 4, gambar: "/assets/tools/hibernate.png", nama: "Hibernate", ket: "Backend", dad: "400" },
+  { id: 1, image: "/assets/tools/java.png", name: "Java 8–17", category: "Backend", delay: "100" },
+  { id: 2, image: "/assets/tools/spring.png", name: "Spring Boot", category: "Backend", delay: "200" },
+  { id: 3, image: "/assets/tools/microservices.png", name: "Microservices", category: "Backend", delay: "300" },
+  { id: 4, image: "/assets/tools/hibernate.png", name: "Hibernate", category: "Backend", delay: "400" },
   
   // Frontend
-  { id: 5, gambar: "/assets/tools/reactjs.png", nama: "React.js", ket: "Frontend", dad: "500" },
-  { id: 6, gambar: "/assets/tools/js.png", nama: "JavaScript", ket: "Frontend", dad: "600" },
-  { id: 7, gambar: "/assets/tools/html.png", nama: "HTML", ket: "Frontend", dad: "700" },
-  { id: 8, gambar: "/assets/tools/tailwind.png", nama: "Tailwind CSS", ket: "Frontend", dad: "800" },
+  { id: 5, image: "/assets/tools/reactjs.png", name: "React.js", category: "Frontend", delay: "500" },
+  { id: 6, image: "/assets/tools/js.png", name: "JavaScript", category: "Frontend", delay: "600" },
+  { id: 7, image: "/assets/tools/html.png", name: "HTML", category: "Frontend", delay: "700" },
+  { id: 8, image: "/assets/tools/tailwind.png", name: "Tailwind CSS", category: "Frontend", delay: "800" },
 
   // Database
-  { id: 9, gambar: "/assets/tools/mysql.png", nama: "MySQL", ket: "Database", dad: "900" },
-  { id: 10, gambar: "/assets/tools/PostgreSQL.png", nama: "PostgreSQL", ket: "Database", dad: "1000" },
-  { id: 11, gambar: "/assets/tools/mongodb.png", nama: "MongoDB", ket: "Database", dad: "1100" },
-  { id: 12, gambar: "/assets/tools/redis.png", nama: "Redis", ket: "Database", dad: "1200" },
+  { id: 9, image: "/assets/tools/mysql.png", name: "MySQL", category: "Database", delay: "900" },
+  { id: 10, image: "/assets/tools/PostgreSQL.png", name: "PostgreSQL", category: "Database", delay: "1000" },
+  { id: 11, image: "/assets/tools/mongodb.png", name: "MongoDB", category: "Database", delay: "1100" },
+  { id: 12, image: "/assets/tools/redis.png", name: "Redis", category: "Database", delay: "1200" },
 
   // Cloud & DevOps
-  { id: 13, gambar: "/assets/tools/aws.png", nama: "AWS", ket: "Cloud", dad: "1300" },
-  { id: 14, gambar: "/assets/tools/docker.png", nama: "Docker", ket: "DevOps", dad: "1400" },
-  { id: 15, gambar: "/assets/tools/kubernetes.png", nama: "Kubernetes", ket: "DevOps", dad: "1500" },
-  { id: 16, gambar: "/assets/tools/jenkins.png", nama: "Jenkins", ket: "CI/CD", dad: "1600" },
+  { id: 13, image: "/assets/tools/aws.png", name: "AWS", category: "Cloud", delay: "1300" },
+  { id: 14, image: "/assets/tools/docker.png", name: "Docker", category: "DevOps", delay: "1400" },
+  { id: 15, image: "/assets/tools/kubernetes.png", name: "Kubernetes", category: "DevOps", delay: "1500" },
+  { id: 16, image: "/assets/tools/jenkins.png", name: "Jenkins", category: "CI/CD", delay: "1600" },
 
   // Messaging & Testing
-  { id: 17, gambar: "/assets/tools/kafka.png", nama: "Kafka", ket: "Messaging", dad: "1700" },
-  { id: 18, gambar: "/assets/tools/rest.png", nama: "REST APIs", ket: "Messaging", dad: "1800" },
-  { id: 19, gambar: "/assets/tools/junit.png", nama: "JUnit", ket: "Testing", dad: "1900" },
-  { id: 20, gambar: "/assets/tools/elk.png", nama: "ELK Stack", ket: "Monitoring", dad: "2000" },
+  { id: 17, image: "/assets/tools/kafka.png", name: "Kafka", category: "Messaging", delay: "1700" },
+  { id: 18, image: "/assets/tools/rest.png", name: "REST APIs", category: "Messaging", delay: "1800" },
+  { id: 19, image: "/assets/tools/junit.png", name: "JUnit", category: "Testing", delay: "1900" },
+  { id: 20, image: "/assets/tools/elk.png", name: "ELK Stack", category: "Monitoring", delay: "2000" },
 ];
 
-export const listProyek = [
+export const listProjects = [
   {
     id: 1,
     image: "/assets/proyek/b2b_logo.jpg",
@@ -48,7 +48,7 @@ export const listProyek = [
     borderColor: "#4f46e5",
     gradient: "linear-gradient(145deg, #4f46e5, #000)",
     url: "https://b2b-gulbarga-accounts.pages.dev",
-    dad: "100",
+    delay: "100",
   },
   {
     id: 2,
@@ -59,7 +59,7 @@ export const listProyek = [
     borderColor: "#3B82F6",
     gradient: "linear-gradient(145deg, #3B82F6, #000)",
     url: "https://nl-connect.pages.dev/home",
-    dad: "200",
+    delay: "200",
   },
   {
     id: 3,
@@ -70,7 +70,7 @@ export const listProyek = [
     borderColor: "#f97316",
     gradient: "linear-gradient(145deg, #f97316, #000)",
     url: "https://bnm-customer.pages.dev/",
-    dad: "300",
+    delay: "300",
   },
   {
     id: 4,
@@ -81,7 +81,7 @@ export const listProyek = [
     borderColor: "#10b981",
     gradient: "linear-gradient(145deg, #10b981, #000)",
     url: "https://ramzan2026.vercel.app/",
-    dad: "400",
+    delay: "400",
   },
   {
     id: 5,
@@ -92,7 +92,7 @@ export const listProyek = [
     borderColor: "#8b5cf6",
     gradient: "linear-gradient(145deg, #8b5cf6, #000)",
     url: "#",
-    dad: "500",
+    delay: "500",
   },
   {
     id: 6,
@@ -103,7 +103,7 @@ export const listProyek = [
     borderColor: "#F97316",
     gradient: "linear-gradient(145deg, #F97316, #000)",
     url: "https://kct-events.en.uptodown.com/android",
-    dad: "600",
+    delay: "600",
   },
   {
     id: 7,
@@ -114,7 +114,7 @@ export const listProyek = [
     borderColor: "#10B981",
     gradient: "linear-gradient(145deg, #10B981, #000)",
     url: "#",
-    dad: "700",
+    delay: "700",
   },
   {
     id: 8,
@@ -125,7 +125,7 @@ export const listProyek = [
     borderColor: "#065f46",
     gradient: "linear-gradient(145deg, #065f46, #000)",
     url: "https://daruttaleemwattarbiyah.netlify.app/",
-    dad: "800",
+    delay: "800",
   },
   {
     id: 9,
@@ -136,7 +136,7 @@ export const listProyek = [
     borderColor: "#ef4444",
     gradient: "linear-gradient(145deg, #ef4444, #000)",
     url: "https://com-mukeshsolanki-snake.en.uptodown.com/android",
-    dad: "900",
+    delay: "900",
   },
   {
     id: 10,
@@ -147,6 +147,6 @@ export const listProyek = [
     borderColor: "#f59e0b",
     gradient: "linear-gradient(145deg, #f59e0b, #000)",
     url: "https://mybinder.org/v2/gh/nghweigeok/jupyter_webapp_demo/HEAD?urlpath=%2Fvoila%2Frender%2FDemo.ipynb",
-    dad: "1000",
+    delay: "1000",
   },
 ];
