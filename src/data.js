@@ -1,10 +1,3 @@
-import HeroImage from "/assets/hero-img.png";
-
-const Image = {
-  HeroImage,
-};
-
-export default Image;
 
 export const listTools = [
   // Backend

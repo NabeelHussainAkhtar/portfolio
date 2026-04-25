@@ -5,7 +5,6 @@ import BlurText from "./components/BlurText/BlurText";
 import ScrambledText from "./components/ScrambledText/ScrambledText";
 import SplitText from "./components/SplitText/SplitText";
 import Lanyard from "./components/Lanyard/Lanyard";
-import GlassIcons from "./components/GlassIcons/GlassIcons";
 import { listTools, listProjects } from "./data";
 import ChromaGrid from "./components/ChromaGrid/ChromaGrid";
 import ProjectModal from "./components/ProjectModal/ProjectModal";
@@ -16,6 +15,8 @@ import ChatRoom from "./components/ChatRoom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import CoffeeModal from "./components/CoffeeModal";
+import ScrollReveal from "./components/ScrollReveal/ScrollReveal";
+import IdentityCard from "./components/IdentityCard/IdentityCard";
 
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 // ..

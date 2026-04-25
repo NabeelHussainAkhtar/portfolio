@@ -2,6 +2,7 @@ import "remixicon/fonts/remixicon.css";
 import Dock from "./Dock/Dock";
 import { VscHome, VscArchive, VscAccount } from "react-icons/vsc";
 import { FiCoffee } from "react-icons/fi";
+import GlassIcons from "./GlassIcons/GlassIcons";
 
 const Footer = ({ onCoffeeClick }) => {
   const items = [
@@ -25,19 +26,17 @@ const Footer = ({ onCoffeeClick }) => {
 
         {/* Social icons - centered on mobile */}
         <div className="flex gap-4 order-2 md:order-none items-center">
-          <a href="https://github.com/NabeelHussainAkhtar" className="text-zinc-400 hover:text-white transition-colors" title="GitHub">
-            <i className="ri-github-fill ri-2x"></i>
-          </a>
-          <a href="https://instagram.com/nabeel_hussain2k02" className="text-zinc-400 hover:text-pink-500 transition-colors" title="Instagram">
-            <i className="ri-instagram-line ri-2x"></i>
-          </a>
-          <a href="mailto:nabeelhussainakhtar@gmail.com" className="text-zinc-400 hover:text-blue-400 transition-colors" title="Email">
-            <i className="ri-mail-fill ri-2x"></i>
-          </a>
+          <GlassIcons 
+            items={[
+              { icon: <i className="ri-github-fill"></i>, label: "GitHub", link: "https://github.com/NabeelHussainAkhtar", color: "blue" },
+              { icon: <i className="ri-instagram-line"></i>, label: "Instagram", link: "https://instagram.com/nabeel_hussain2k02", color: "purple" },
+              { icon: <i className="ri-mail-fill"></i>, label: "Email", link: "mailto:nabeelhussainakhtar@gmail.com", color: "red" }
+            ]}
+          />
           
           <button 
             onClick={onCoffeeClick}
-            className="flex items-center gap-2 bg-amber-500/10 border border-amber-500/50 text-amber-500 p-2 px-4 rounded-full hover:bg-amber-500 hover:text-white transition-all duration-300 font-semibold text-sm"
+            className="flex items-center gap-2 bg-amber-500/10 border border-amber-500/50 text-amber-500 p-2 px-4 rounded-full hover:bg-amber-500 hover:text-white transition-all duration-300 font-semibold text-sm h-fit self-center"
           >
             <FiCoffee size={18} />
             <span>Buy me a coffee</span>

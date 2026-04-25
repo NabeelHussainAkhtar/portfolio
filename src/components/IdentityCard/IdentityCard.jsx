@@ -40,7 +40,7 @@ const IdentityCard = ({ photoUrl, name, title }) => {
             <div className="skills-grid">
               {listTools.slice(0, 12).map((tool) => (
                 <div key={tool.id} className="skill-icon-box">
-                  <img src={tool.gambar} alt={tool.nama} className="skill-img" title={tool.nama} />
+                  <img src={tool.image} alt={tool.name} className="skill-img" title={tool.name} />
                 </div>
               ))}
             </div>

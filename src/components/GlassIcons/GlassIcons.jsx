@@ -19,23 +19,47 @@ const GlassIcons = ({ items, className }) => {
 
   return (
     <div className={`icon-btns ${className || ""}`}>
-      {items.map((item, index) => (
-        <button
-          key={index}
-          className={`icon-btn ${item.customClass || ""}`}
-          aria-label={item.label}
-          type="button"
-        >
-          <span
-            className="icon-btn__back"
-            style={getBackgroundStyle(item.color)}
-          ></span>
-          <span className="icon-btn__front">
-            <span className="icon-btn__icon" aria-hidden="true">{item.icon}</span>
-          </span>
-          <span className="icon-btn__label">{item.label}</span>
-        </button>
-      ))}
+      {items.map((item, index) => {
+        const Content = () => (
+          <>
+            <span
+              className="icon-btn__back"
+              style={getBackgroundStyle(item.color)}
+            ></span>
+            <span className="icon-btn__front">
+              <span className="icon-btn__icon" aria-hidden="true">{item.icon}</span>
+            </span>
+            <span className="icon-btn__label">{item.label}</span>
+          </>
+        );
+
+        if (item.link) {
+          return (
+            <a
+              key={index}
+              href={item.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`icon-btn ${item.customClass || ""}`}
+              aria-label={item.label}
+            >
+              <Content />
+            </a>
+          );
+        }
+
+        return (
+          <button
+            key={index}
+            className={`icon-btn ${item.customClass || ""}`}
+            aria-label={item.label}
+            type="button"
+            onClick={item.onClick}
+          >
+            <Content />
+          </button>
+        );
+      })}
     </div>
   );
 };
